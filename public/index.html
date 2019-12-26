@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="build/tailwind.css" />
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700" rel="stylesheet" />
+    <title>Vitamedics</title>
+  </head>
+  <body class="text-gray-700 bg-white" style="font-family: 'Source Sans Pro', sans-serif">
+    <header>
+      <nav>
+        <div class="container mx-auto px-6 flex justify-between items-center">
+          <a class="flex items-center " href="#">
+            <img class="w-20 lg:w-32" src="./img/logo_transparent.png" alt="">
+            <span class="font-bold text-2xl lg:text-4xl">Vitamedics</span>
+          </a>
+          <div class="block lg:hidden">
+            <button class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-800 hover:border-teal-500 appearance-none focus:outline-none">
+              <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <title>Menu</title>
+                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+              </svg>
+            </button>
+          </div>
+          <div class="hidden lg:block">
+            <ul class="inline-flex">
+              <li><a class="px-4 font-bold" href="/">Home</a></li>
+              <li><a class="px-4 hover:text-gray-800 " href="#">Practitioners</a></li>
+              <li><a class="px-4 hover:text-gray-800" href="#">About Us</a></li>
+              <li><a class="px-4 hover:text-gray-800" href="#">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- <div
+        class="bg-cover bg-center w-auto h-auto"
+        style="background-image: url(./img/pop.jpg)"
+      ></div> -->
+    </header>
+    <main>
+      <div class="py-2" style="background: linear-gradient(90deg, #667eea 0%, #764ba2 100%)"
+    >
+      <div class="container mx-auto px-6 py-6">
+        <h2 class="text-4xl font-bold mb-2 text-white">
+          Welcome to Vitamedics Pharmaceuticals!
+        </h2>
+        <h3 class="text-2xl mb-8 text-gray-200">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos nam velit excepturi quibusdam quisquam culpa, optio nostrum labore necessitatibus, sapiente nobis sunt porro provident perspiciatis repellat natus in veniam cum..
+        </h3>
+
+        <button class="bg-white font-bold rounded-full py-4 px-8 shadow-lg uppercase tracking-wider hover:bg-teal-400 hover:shadow-xl">
+          Read More
+        </button>
+      </div>
+      <!-- features structure -->
+
+    </main>
+    <section class="container mx-auto px-6 p-10">
+      <h2 class="text-4xl font-bold text-center text-gray-800 mb-8">
+        Features
+      </h2>
+      <div class="flex items-center flex-wrap mb-20">
+        <div class="w-full md:w-1/2">
+          <h4 class="text-3xl text-gray-800 font-bold mb-3">Exercise Metric</h4>
+          <p class="text-gray-600 mb-8">Our Smart Health Monitoring Wristwatch is able to capture you vitals while you exercise. You can create different category of exercises and can track your vitals on the go.</p>
+        </div>
+        <div class="w-full md:w-1/2">
+          <img src="assets/health.svg" alt="Monitoring" />
+        </div>
+      </div>
+
+      <div class="flex items-center flex-wrap mb-20">
+        <div class="w-full md:w-1/2">
+          <img src="assets/report.svg" alt="Reporting" />
+        </div>
+        <div class="w-full md:w-1/2 pl-10">
+          <h4 class="text-3xl text-gray-800 font-bold mb-3">Reporting</h4>
+          <p class="text-gray-600 mb-8">Our Smart Health Monitoring Wristwatch can generate a comprehensive report on your vitals depending on your settings either daily, weekly, monthly, quarterly or yearly.</p>
+        </div>
+      </div>
+
+      <div class="flex items-center flex-wrap mb-20">
+        <div class="w-full md:w-1/2">
+          <h4 class="text-3xl text-gray-800 font-bold mb-3">Syncing</h4>
+          <p class="text-gray-600 mb-8">Our Smart Health Monitoring Wristwatch allows you to sync data across all your mobile devices whether iOS, Android or Windows OS and also to your laptop whether MacOS, GNU/LInux or Windows OS.</p>
+        </div>
+        <div class="w-full md:w-1/2">
+          <img src="assets/sync.svg" alt="Syncing" />
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
