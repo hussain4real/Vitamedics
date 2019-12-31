@@ -6,264 +6,280 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="build/tailwind.css" />
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <title>Vitamedics</title>
   </head>
   <body class="text-gray-700 bg-white" style="font-family: 'Source Sans Pro', sans-serif">
-    <header>
-      <nav>
-        <div class="container mx-auto  flex justify-between items-center" style="background:  repeating-linear-gradient(90deg, transparent 0 50px,
-        rgba(255, 127, 0, 0.25) 50px 56px,
-        transparent 56px 63px,
-        rgba(255, 127, 0, 0.25) 63px 69px,
-        transparent 69px 116px,
-        rgba(255, 206, 0, 0.25) 116px 166px),
-      repeating-linear-gradient(0deg, transparent 0 50px,
-        rgba(255, 127, 0, 0.25) 50px 56px,
-        transparent 56px 63px,
-        rgba(255, 127, 0, 0.25) 63px 69px,
-        transparent 69px 116px,
-        rgba(255, 206, 0, 0.25) 116px 166px),
-      repeating-linear-gradient(-45deg, transparent 0 5px,
-        rgba(143, 77, 63, 0.25) 5px 10px),
-      repeating-linear-gradient(45deg, transparent 0 5px,
-        rgba(143, 77, 63, 0.25) 5px 10px)">
-          <a class="flex items-center " href="#">
-            <img class="w-20 lg:w-32" src="./img/logo_transparent.png" alt="">
-            <span class="font-bold text-2xl lg:text-4xl">Vitamedics</span>
-          </a>
-          <div class="block lg:hidden">
-            <button class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-800 hover:border-teal-500 appearance-none focus:outline-none">
-              <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <title>Menu</title>
-                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-              </svg>
+    <div id="app">
+
+      <header>
+        <nav>
+          <div class="container mx-auto py-0 sm:flex  justify-between items-center" style="background:repeating-linear-gradient(90deg, transparent 0 50px,
+          rgba(255, 127, 0, 0.25) 50px 56px,
+          transparent 56px 63px,
+          rgba(255, 127, 0, 0.25) 63px 69px,
+          transparent 69px 116px,
+          rgba(255, 206, 0, 0.25) 116px 166px),
+        repeating-linear-gradient(0deg, transparent 0 50px,
+          rgba(255, 127, 0, 0.25) 50px 56px,
+          transparent 56px 63px,
+          rgba(255, 127, 0, 0.25) 63px 69px,
+          transparent 69px 116px,
+          rgba(255, 206, 0, 0.25) 116px 166px),
+        repeating-linear-gradient(-45deg, transparent 0 5px,
+          rgba(143, 77, 63, 0.25) 5px 10px),
+        repeating-linear-gradient(45deg, transparent 0 5px,
+          rgba(143, 77, 63, 0.25) 5px 10px)">
+          <div class="flex items-center justify-between">
+
+            <a class="flex items-center " href="#">
+              <img class="w-12" src="./img/logo_transparent.png" alt="">
+              <span class="font-bold text-2xl lg:text-4xl">Vitamedics</span>
+            </a>
+            <div class=" sm:hidden">
+              <button @click="isOpen = !isOpen" class=" px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-800 hover:border-teal-500 appearance-none focus:outline-none">
+                <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <title>Menu</title>
+                  <path v-if="isOpen" d="M15.898,4.045c-0.271-0.272-0.713-0.272-0.986,0l-4.71,4.711L5.493,4.045c-0.272-0.272-0.714-0.272-0.986,0s-0.272,0.714,0,0.986l4.709,4.711l-4.71,4.711c-0.272,0.271-0.272,0.713,0,0.986c0.136,0.136,0.314,0.203,0.492,0.203c0.179,0,0.357-0.067,0.493-0.203l4.711-4.711l4.71,4.711c0.137,0.136,0.314,0.203,0.494,0.203c0.178,0,0.355-0.067,0.492-0.203c0.273-0.273,0.273-0.715,0-0.986l-4.711-4.711l4.711-4.711C16.172,4.759,16.172,4.317,15.898,4.045z"></path>
+                  <path v-if="!isOpen" d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+
+                </svg>
+
+
+              </button>
+            </div>
+          </div>
+            <div :class="isOpen ? 'block' : 'hidden'" class="sm:flex">
+              <ul class="sm:flex">
+                <li><a class="block px-4 font-bold" href="/">Home</a></li>
+                <li><a class="block px-4 hover:text-gray-800 " href="#">Practitioners</a></li>
+                <li><a class="block px-4 hover:text-gray-800" href="#">About Us</a></li>
+                <li><a class="block px-4 hover:text-gray-800" href="#">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <!-- <div
+          class="bg-cover bg-center w-auto h-auto"
+          style="background-image: url(./img/pop.jpg)"
+        ></div> -->
+      </header>
+      <main>
+        <div class="container py-2 mx-auto " style="background: linear-gradient(90deg, #667eea 0%, #764ba2 100%)"
+      >
+        <div class="container mx-auto px-6 py-6">
+          <h2 class="text-4xl font-bold mb-2 text-white">
+            Welcome to Vitamedics Pharmaceuticals!
+          </h2>
+          <h3 class="text-2xl mb-8 text-gray-200">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos nam velit excepturi quibusdam quisquam culpa, optio nostrum labore necessitatibus, sapiente nobis sunt porro provident perspiciatis repellat natus in veniam cum..
+          </h3>
+
+          <button class="bg-white font-bold sm:font-normal focus:bg-pink-200 hover:font-bold rounded-full py-4 px-8 shadow-lg uppercase tracking-wider hover:bg-teal-400 hover:shadow-xl">
+            Read More
+          </button>
+        </div>
+        <!-- features structure -->
+
+      </main>
+      <section class="container mx-auto px-6 p-10 " style="background: linear-gradient(-120deg, #7182cc 50%, #7b599e 20%)">
+        <h2 class="text-4xl font-bold text-center text-gray-800 mb-8">
+          Features
+        </h2>
+
+        <div class="flex items-center flex-wrap mb-20">
+          <div class="w-full md:w-1/2">
+            <img src="./img/undraw_doctor_kw5l.svg" alt="Reporting" />
+          </div>
+          <div class="w-full md:w-1/2 pl-10">
+            <h4 class="text-3xl text-gray-800 font-bold mb-3">Consultancy</h4>
+            <p class="text-gray-200 mb-8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo delectus id accusantium, facere aliquam dolorem fugit aperiam eveniet exercitationem eos dolorum? Tempora, in officia reiciendis quae blanditiis nesciunt? Dolores, tempore!.</p>
+          </div>
+        </div>
+
+        <div class="flex items-center flex-wrap mb-20">
+          <div class="w-full md:w-1/2">
+            <h4 class="text-3xl text-gray-800 font-bold mb-3">Dedicated Team</h4>
+            <p class="text-gray-200 mb-8">Our Smart Health Practitioners are well equipped and Dedicated to giving you the best health service. They are have your health interest at heart without compromising legal health practices</p>
+          </div>
+          <div class="w-full md:w-1/2">
+            <img src="./img/undraw_team_ih79.svg" alt="Monitoring" />
+          </div>
+        </div>
+
+        <div class="flex items-center flex-wrap mb-20">
+          <div class="w-full md:w-1/2">
+            <img src="./img/undraw_shared_workspace_hwky.svg" alt="Reporting" />
+          </div>
+          <div class="w-full md:w-1/2 pl-10">
+            <h4 class="text-3xl text-gray-800 font-bold mb-3">Good Customer Service</h4>
+            <p class="text-gray-200 mb-8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo delectus id accusantium, facere aliquam dolorem fugit aperiam eveniet exercitationem eos dolorum? Tempora, in officia reiciendis quae blanditiis nesciunt? Dolores, tempore!.</p>
+          </div>
+        </div>
+
+        <div class="flex items-center flex-wrap mb-20">
+          <div class="w-full md:w-1/2">
+            <h4 class="text-3xl text-gray-800 font-bold mb-3">Book an Appointment</h4>
+            <p class="text-gray-200 mb-8">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores minus temporibus expedita aperiam, optio, quos adipisci ducimus perferendis similique quo voluptatibus nam? Excepturi nesciunt neque aliquam sapiente cum, expedita repellendus.</p>
+          </div>
+          <div class="w-full md:w-1/2">
+            <img src="./img/undraw_booking_33fn.svg" alt="Syncing" />
+          </div>
+        </div>
+      </section>
+
+      <!-- product section -->
+      <section class="bg-gray-300 my-4 rounded-lg">
+        <div class="container mx-auto px-6 py-8">
+          <h2 class="text-4xl font-bold text-center text-gray-800 mb-8">
+            Our Services
+          </h2>
+          <div class="flex flex-wrap">
+            <div class="w-full md:w-1/3 px-2 mb-4">
+              <div class="bg-white rounded-lg shadow py-2 hover:shadow-2xl">
+                <h1 class="text-gray-700 font-semibold text-center">Despensory</h1>
+                <img class="p-2" src="./img/Gloves.png" alt="">
+                <p class="text-gray-800 text-base px-6 mb-5" style="background: linear-gradient(90deg, #3f4e91 0%, #4c2f69 100%)">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia corporis magni laboriosam totam cupiditate rem, ut unde? Voluptates pariatur enim nemo provident, ex, tempora magnam doloribus officiis culpa optio consequuntur.</p>
+              </div>
+            </div>
+
+            <div class="w-full md:w-1/3 px-2 mb-4">
+              <div class="bg-white rounded-lg shadow py-2 hover:shadow-2xl">
+                <h1 class="text-gray-700 font-semibold text-center">Treatment</h1>
+                <img class="p-2" src="./img/treatment.jpg" alt="">
+                <p class="text-gray-800 text-base px-6 mb-5" style="background: linear-gradient(90deg, #3f4e91 0%, #4c2f69 100%)">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia corporis magni laboriosam totam cupiditate rem, ut unde? Voluptates pariatur enim nemo provident, ex, tempora magnam doloribus officiis culpa optio consequuntur.</p>
+              </div>
+            </div>
+
+            <div class="w-full md:w-1/3 px-2 mb-4">
+              <div class="bg-white rounded-lg shadow py-2 hover:shadow-2xl">
+                <h1 class="text-gray-700 font-semibold text-center">Laboratory</h1>
+                <img class="p-2" src="./img/laboratory.jpg" alt="">
+                <p class="text-gray-800 text-base px-6 mb-5" style="background: linear-gradient(90deg, #3f4e91 0%, #4c2f69 100%)">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia corporis magni laboriosam totam cupiditate rem, ut unde? Voluptates pariatur enim nemo provident, ex, tempora magnam doloribus officiis culpa optio consequuntur.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- testimonial section -->
+      <section class="bg-gray-200 my-4 rounded-lg">
+        <div class="container mx-auto px-6 py-4">
+          <h2 class="text-4xl font-bold text-center text-gray-800 mb-8">
+            Testimonials
+          </h2>
+          <div class="flex flex-wrap">
+            <div class="w-full md:w-1/3 px-2 mb-4">
+              <div class="bg-white rounded shadow-md py-2 hover:shadow-2xl">
+                <img class="w-32 ml-12 rounded-full " src="./img/undraw_man_eiev.svg" alt="">
+                <p class="text-gray-800 text-base px-6 mb-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam, doloribus cupiditate? Exercitationem, dolorem quia debitis recusandae consequuntur.</p>
+                <p class="text-gray-500 text-xs md:text-sm px-6">John Doe</p>
+              </div>
+            </div>
+
+            <div class="w-full md:w-1/3 px-2 mb-4">
+              <div class="bg-white rounded shadow-md py-2 hover:shadow-2xl">
+                <img class="w-32 ml-12 rounded-full " src="./img/undraw_man_eiev.svg" alt="">
+                <p class="text-gray-800 text-base px-6 mb-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam, doloribus cupiditate? Exercitationem, dolorem quia debitis recusandae consequuntur.</p>
+                <p class="text-gray-500 text-xs md:text-sm px-6">Jane Doe</p>
+              </div>
+            </div>
+
+            <div class="w-full md:w-1/3 px-2 mb-4">
+              <div class="bg-white rounded shadow-md py-2 hover:shadow-2xl">
+                <img class="w-32 ml-12 rounded-full " src="./img/undraw_man_eiev.svg" alt="">
+                <p class="text-gray-800 text-base px-6 mb-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam, doloribus cupiditate? Exercitationem, dolorem quia debitis recusandae consequuntur.</p>
+                <p class="text-gray-500 text-xs md:text-sm px-6">James Doe</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- newsletter section -->
+      <section style="background-color: #667eea">
+        <div class="container mx-auto px-6 text-center py-20">
+          <h2 class="mb-6 text-4xl font-bold text-center text-white">
+            Sign Up
+          </h2>
+          <h3 class="my-4 text-2xl text-white">
+            Get our weekly newsletter straight to your inbox
+          </h3>
+          <form name="email-form" method="post" data-netlify="true">
+
+            <input class="w-64 h-10 px-4 rounded mx-4" type="email" name="emain" id="mail" placeholder="your email address">
+            <button type="submit"
+              class="bg-white font-bold sm:font-normal hover:font-bold font-sans rounded-full mt-6 py-4 px-8 shadow-lg uppercase hover:bg-teal-400 focus:bg-pink-200"
+            >
+              Push
             </button>
-          </div>
-          <div class="hidden lg:block">
-            <ul class="inline-flex">
-              <li><a class="px-4 font-bold" href="/">Home</a></li>
-              <li><a class="px-4 hover:text-gray-800 " href="#">Practitioners</a></li>
-              <li><a class="px-4 hover:text-gray-800" href="#">About Us</a></li>
-              <li><a class="px-4 hover:text-gray-800" href="#">Contact Us</a></li>
-            </ul>
-          </div>
+          </form>
         </div>
-      </nav>
-      <!-- <div
-        class="bg-cover bg-center w-auto h-auto"
-        style="background-image: url(./img/pop.jpg)"
-      ></div> -->
-    </header>
-    <main>
-      <div class="py-2 " style="background: linear-gradient(90deg, #667eea 0%, #764ba2 100%)"
-    >
-      <div class="container mx-auto px-6 py-6">
-        <h2 class="text-4xl font-bold mb-2 text-white">
-          Welcome to Vitamedics Pharmaceuticals!
-        </h2>
-        <h3 class="text-2xl mb-8 text-gray-200">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos nam velit excepturi quibusdam quisquam culpa, optio nostrum labore necessitatibus, sapiente nobis sunt porro provident perspiciatis repellat natus in veniam cum..
-        </h3>
+      </section>
 
-        <button class="bg-white font-bold rounded-full py-4 px-8 shadow-lg uppercase tracking-wider hover:bg-teal-400 hover:shadow-xl">
-          Read More
-        </button>
-      </div>
-      <!-- features structure -->
-
-    </main>
-    <section class="container mx-auto px-6 p-10 " style="background: linear-gradient(-120deg, #7182cc 50%, #7b599e 20%)">
-      <h2 class="text-4xl font-bold text-center text-gray-800 mb-8">
-        Features
-      </h2>
-
-      <div class="flex items-center flex-wrap mb-20">
-        <div class="w-full md:w-1/2">
-          <img src="./img/undraw_doctor_kw5l.svg" alt="Reporting" />
-        </div>
-        <div class="w-full md:w-1/2 pl-10">
-          <h4 class="text-3xl text-gray-800 font-bold mb-3">Consultancy</h4>
-          <p class="text-gray-200 mb-8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo delectus id accusantium, facere aliquam dolorem fugit aperiam eveniet exercitationem eos dolorum? Tempora, in officia reiciendis quae blanditiis nesciunt? Dolores, tempore!.</p>
-        </div>
-      </div>
-
-      <div class="flex items-center flex-wrap mb-20">
-        <div class="w-full md:w-1/2">
-          <h4 class="text-3xl text-gray-800 font-bold mb-3">Dedicated Team</h4>
-          <p class="text-gray-200 mb-8">Our Smart Health Practitioners are well equipped and Dedicated to giving you the best health service. They are have your health interest at heart without compromising legal health practices</p>
-        </div>
-        <div class="w-full md:w-1/2">
-          <img src="./img/undraw_team_ih79.svg" alt="Monitoring" />
-        </div>
-      </div>
-
-      <div class="flex items-center flex-wrap mb-20">
-        <div class="w-full md:w-1/2">
-          <img src="./img/undraw_shared_workspace_hwky.svg" alt="Reporting" />
-        </div>
-        <div class="w-full md:w-1/2 pl-10">
-          <h4 class="text-3xl text-gray-800 font-bold mb-3">Good Customer Service</h4>
-          <p class="text-gray-200 mb-8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo delectus id accusantium, facere aliquam dolorem fugit aperiam eveniet exercitationem eos dolorum? Tempora, in officia reiciendis quae blanditiis nesciunt? Dolores, tempore!.</p>
-        </div>
-      </div>
-
-      <div class="flex items-center flex-wrap mb-20">
-        <div class="w-full md:w-1/2">
-          <h4 class="text-3xl text-gray-800 font-bold mb-3">Book an Appointment</h4>
-          <p class="text-gray-200 mb-8">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores minus temporibus expedita aperiam, optio, quos adipisci ducimus perferendis similique quo voluptatibus nam? Excepturi nesciunt neque aliquam sapiente cum, expedita repellendus.</p>
-        </div>
-        <div class="w-full md:w-1/2">
-          <img src="./img/undraw_booking_33fn.svg" alt="Syncing" />
-        </div>
-      </div>
-    </section>
-
-    <!-- product section -->
-    <section class="bg-gray-300">
-      <div class="container mx-auto px-6 py-8">
-        <h2 class="text-4xl font-bold text-center text-gray-800 mb-8">
-          Our Services
-        </h2>
-        <div class="flex flex-wrap">
-          <div class="w-full md:w-1/3 px-2 mb-4">
-            <div class="bg-white rounded-lg shadow py-2 hover:shadow-2xl">
-              <h1 class="text-gray-700 font-semibold text-center">Despensory</h1>
-              <img class="p-2" src="./img/Gloves.png" alt="">
-              <p class="text-gray-800 text-base px-6 mb-5" style="background: linear-gradient(90deg, #3f4e91 0%, #4c2f69 100%)">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia corporis magni laboriosam totam cupiditate rem, ut unde? Voluptates pariatur enim nemo provident, ex, tempora magnam doloribus officiis culpa optio consequuntur.</p>
+      <!-- footer section -->
+      <footer class="bg-gray-100">
+        <div class="container mx-auto px-6 pt-10 pb-6">
+          <div class="flex flex-wrap">
+            <div class="w-full md:w-1/4 text-center md:text-left">
+              <h5 class="uppercase mb-6 font-bold">Links</h5>
+              <ul class="mb-4">
+                <li class="mt-2">
+                  <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">FAQ</a>
+                </li>
+                <li class="mt-2">
+                  <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">Help</a>
+                </li>
+                <li class="mt-2">
+                  <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">Support</a>
+                </li>
+              </ul>
             </div>
-          </div>
-
-          <div class="w-full md:w-1/3 px-2 mb-4">
-            <div class="bg-white rounded-lg shadow py-2 hover:shadow-2xl">
-              <h1 class="text-gray-700 font-semibold text-center">Treatment</h1>
-              <img class="p-2" src="./img/treatment.jpg" alt="">
-              <p class="text-gray-800 text-base px-6 mb-5" style="background: linear-gradient(90deg, #3f4e91 0%, #4c2f69 100%)">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia corporis magni laboriosam totam cupiditate rem, ut unde? Voluptates pariatur enim nemo provident, ex, tempora magnam doloribus officiis culpa optio consequuntur.</p>
+            <div class="w-full md:w-1/4 text-center md:text-left">
+              <h5 class="uppercase mb-6 font-bold">Legal</h5>
+              <ul class="mb-4">
+                <li class="mt-2">
+                  <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">Terms</a>
+                </li>
+                <li class="mt-2">
+                  <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">Privacy</a>
+                </li>
+              </ul>
             </div>
-          </div>
-
-          <div class="w-full md:w-1/3 px-2 mb-4">
-            <div class="bg-white rounded-lg shadow py-2 hover:shadow-2xl">
-              <h1 class="text-gray-700 font-semibold text-center">Laboratory</h1>
-              <img class="p-2" src="./img/laboratory.jpg" alt="">
-              <p class="text-gray-800 text-base px-6 mb-5" style="background: linear-gradient(90deg, #3f4e91 0%, #4c2f69 100%)">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia corporis magni laboriosam totam cupiditate rem, ut unde? Voluptates pariatur enim nemo provident, ex, tempora magnam doloribus officiis culpa optio consequuntur.</p>
+            <div class="w-full md:w-1/4 text-center md:text-left">
+              <h5 class="uppercase mb-6 font-bold">Social</h5>
+              <ul class="mb-4">
+                <li class="mt-2">
+                  <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">Facebook</a>
+                </li>
+                <li class="mt-2">
+                  <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">Linkedin</a>
+                </li>
+                <li class="mt-2">
+                  <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">Twitter</a>
+                </li>
+              </ul>
+            </div>
+            <div class="w-full md:w-1/4 text-center md:text-left">
+              <h5 class="uppercase mb-6 font-bold">Company</h5>
+              <ul class="mb-4">
+                <li class="mt-2">
+                  <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">Official Blog</a>
+                </li>
+                <li class="mt-2">
+                  <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">About Us</a>
+                </li>
+                <li class="mt-2">
+                  <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">Contact</a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </footer>
+    </div>
 
-    <!-- testimonial section -->
-    <section class="bg-gray-100">
-      <div class="container mx-auto px-6 py-4">
-        <h2 class="text-4xl font-bold text-center text-gray-800 mb-8">
-          Testimonials
-        </h2>
-        <div class="flex flex-wrap">
-          <div class="w-full md:w-1/3 px-2 mb-4">
-            <div class="bg-white rounded shadow-md py-2 hover:shadow-2xl">
-              <img class="w-32 ml-12 rounded-full " src="./img/undraw_man_eiev.svg" alt="">
-              <p class="text-gray-800 text-base px-6 mb-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam, doloribus cupiditate? Exercitationem, dolorem quia debitis recusandae consequuntur.</p>
-              <p class="text-gray-500 text-xs md:text-sm px-6">John Doe</p>
-            </div>
-          </div>
-
-          <div class="w-full md:w-1/3 px-2 mb-4">
-            <div class="bg-white rounded shadow-md py-2 hover:shadow-2xl">
-              <img class="w-32 ml-12 rounded-full " src="./img/undraw_man_eiev.svg" alt="">
-              <p class="text-gray-800 text-base px-6 mb-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam, doloribus cupiditate? Exercitationem, dolorem quia debitis recusandae consequuntur.</p>
-              <p class="text-gray-500 text-xs md:text-sm px-6">Jane Doe</p>
-            </div>
-          </div>
-
-          <div class="w-full md:w-1/3 px-2 mb-4">
-            <div class="bg-white rounded shadow-md py-2 hover:shadow-2xl">
-              <img class="w-32 ml-12 rounded-full " src="./img/undraw_man_eiev.svg" alt="">
-              <p class="text-gray-800 text-base px-6 mb-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam, doloribus cupiditate? Exercitationem, dolorem quia debitis recusandae consequuntur.</p>
-              <p class="text-gray-500 text-xs md:text-sm px-6">James Doe</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- newsletter section -->
-    <section style="background-color: #667eea">
-      <div class="container mx-auto px-6 text-center py-20">
-        <h2 class="mb-6 text-4xl font-bold text-center text-white">
-          Sign Up
-        </h2>
-        <h3 class="my-4 text-2xl text-white">
-          Get our weekly newsletter straight to your inbox
-        </h3>
-        <input class="w-64 h-10 px-4 rounded mx-4" type="email" name="emain" id="mail" placeholder="your email address">
-        <button
-          class="bg-white font-bold font-sans rounded-full mt-6 py-4 px-8 shadow-lg uppercase hover:bg-teal-400"
-        >
-          Push
-        </button>
-      </div>
-    </section>
-
-    <!-- footer section -->
-    <footer class="bg-gray-100">
-      <div class="container mx-auto px-6 pt-10 pb-6">
-        <div class="flex flex-wrap">
-          <div class="w-full md:w-1/4 text-center md:text-left">
-            <h5 class="uppercase mb-6 font-bold">Links</h5>
-            <ul class="mb-4">
-              <li class="mt-2">
-                <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">FAQ</a>
-              </li>
-              <li class="mt-2">
-                <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">Help</a>
-              </li>
-              <li class="mt-2">
-                <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">Support</a>
-              </li>
-            </ul>
-          </div>
-          <div class="w-full md:w-1/4 text-center md:text-left">
-            <h5 class="uppercase mb-6 font-bold">Legal</h5>
-            <ul class="mb-4">
-              <li class="mt-2">
-                <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">Terms</a>
-              </li>
-              <li class="mt-2">
-                <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">Privacy</a>
-              </li>
-            </ul>
-          </div>
-          <div class="w-full md:w-1/4 text-center md:text-left">
-            <h5 class="uppercase mb-6 font-bold">Social</h5>
-            <ul class="mb-4">
-              <li class="mt-2">
-                <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">Facebook</a>
-              </li>
-              <li class="mt-2">
-                <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">Linkedin</a>
-              </li>
-              <li class="mt-2">
-                <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">Twitter</a>
-              </li>
-            </ul>
-          </div>
-          <div class="w-full md:w-1/4 text-center md:text-left">
-            <h5 class="uppercase mb-6 font-bold">Company</h5>
-            <ul class="mb-4">
-              <li class="mt-2">
-                <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">Official Blog</a>
-              </li>
-              <li class="mt-2">
-                <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">About Us</a>
-              </li>
-              <li class="mt-2">
-                <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">Contact</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </footer>
+    <script src="./index.js"></script>
   </body>
 </html>
